@@ -24,7 +24,7 @@ Results
 `Figure 2` shows the exploratory results.
 #### Figure 2 Patient-pharmacy distribution maps.
 <p align="center">
-  <img src="/docs/facility_maps.png" />
+  <img src="/docs/summary_plots.png" />
 </p>
 
 ## Background and funding
