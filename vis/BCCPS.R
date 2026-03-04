@@ -35,11 +35,11 @@ usa_states$physician_bin <- cut(usa_states$total_physicians, breaks = phys_bins,
 #########################
 physicians <- ggplot() +
   geom_sf(data = usa_states, aes(fill = physician_bin), linewidth = 0.001) +
-  scale_fill_viridis_d(direction = 1) +
+  scale_fill_brewer(palette = "OrRd") +
   geom_sf_text(data = usa_states_label, aes(label = STUSPS), size = 2, 
                color = "white", fontface = "bold") +
   labs(title = "(A) Total Physicians.",
-       subtitle = "Number of registered physicians in each state.", 
+       subtitle = "Number of registered cardiovascular physicians in each state.", 
        fill = "Totals", x = NULL, y = NULL) + theme_minimal() +
   theme(legend.position = 'bottom',
         plot.margin = margin(0, 0, 0, 0),              
@@ -68,11 +68,11 @@ usa_states$bccp_bin <- cut(usa_states$bccp, breaks = bc_bins,
 
 total_bccp <- ggplot() +
   geom_sf(data = usa_states, aes(fill = bccp_bin), linewidth = 0.001) +
-  scale_fill_viridis_d(direction = 1) +
+  scale_fill_brewer(palette = "OrRd")+
   geom_sf_text(data = usa_states_label, aes(label = STUSPS), size = 2, 
                color = "white", fontface = "bold") +
   labs(title = "(B) Total BCCP.",
-       subtitle = "Number of registered cardiovascular physicians in each state.", 
+       subtitle = "Number of registered cardiovascular pharmacists in each state.", 
        fill = "Totals", x = NULL, y = NULL) + theme_minimal() +
   theme(legend.position = 'bottom',
         plot.margin = margin(0, 0, 0, 0),              
@@ -103,11 +103,11 @@ usa_states$phys_bcc_bin <- cut(usa_states$bccp_phys, breaks = ph_bc_bins,
               "5.1 - 9", "Above 9"))
 bccp_phy <- ggplot() +
   geom_sf(data = usa_states, aes(fill = phys_bcc_bin), linewidth = 0.001) +
-  scale_fill_viridis_d(direction = 1) +
+  scale_fill_brewer(palette = "OrRd") +
   geom_sf_text(data = usa_states_label, aes(label = STUSPS), size = 2, 
                color = "white", fontface = "bold") +
   labs(title = "(C) BCCP Ratio.",
-       subtitle = "The ratio of registered cardiovascular physicians to total number of physicians.", 
+       subtitle = "The ratio of registered cardiovascular pharmacists physicians to total \nnumber of cardiovascular physicians.", 
        fill = "Ratio (%)", x = NULL, y = NULL) + theme_minimal() +
   theme(legend.position = 'bottom',
         plot.margin = margin(0, 0, 0, 0),              
@@ -137,7 +137,7 @@ usa_states$death_100k_bin <- cut(usa_states$deaths_per_100k, breaks = death_bins
 
 death_100k <- ggplot() +
   geom_sf(data = usa_states, aes(fill = death_100k_bin), linewidth = 0.001) +
-  scale_fill_viridis_d(direction = 1) +
+  scale_fill_brewer(palette = "OrRd") +
   geom_sf_text(data = usa_states_label, aes(label = STUSPS), size = 2, 
                color = "white",  fontface = "bold") +
   labs(title = "(D) Deaths.",
